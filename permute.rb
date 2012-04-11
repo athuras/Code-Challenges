@@ -25,7 +25,7 @@ class Array
 end
 
 #  I've been thinking about interesting ways to approach the problem of elegantly returning the 
-#  permutations of a set. If this were in C, it would be efficient or whatever, but you shoudl get the idea.
+#  permutations of a set. If this were in C, it would be efficient or whatever, but you should get the idea.
 #  what I like is that this sort of task (serendipidously how I implemented it) can be very readily made parrallel
 #  but I'll leave that for another day.
 #
