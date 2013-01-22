@@ -13,7 +13,7 @@ def reducePrefix( expression, rules )
   aux, out = [], []
   while expression.length > 0 do
     if aux.length == 3
-      if !rules[aux[2]].nil? and rules[aux[1]].nil? and rules[aux[0]].nil?
+      if rules.key?(aux[2]) and !rules.key?(aux[1]) and !rules.key?(aux[0])
         if aux[0].to_i != 0 and aux[1].to_i != 0
           if aux[2] == '/' and eval(aux[1] + "%" + aux[0]) != 0
             3.times do
@@ -53,12 +53,12 @@ rules['+'], rules['-'] = [2, false], [2, false]
 out, ops = [], []
 
 input.reverse.each do |a|
-  if  rules[a].nil? and !['(',')'].include?(a)
+  if  !rules.key?(a) and !['(',')'].include?(a)
     out.push(a)
-  elsif !rules[a].nil?
+  elsif rules.key?(a)
     oA = rules[a][1] # for clarity in the coming comparison
     oP = rules[a][0]
-    until rules[ops[-1]].nil? or (!oA and rules[ops[-1]][0] <= oP or oA and oP < rules[ops[-1]][0])
+    until !rules.key?(ops[-1]) or (!oA and rules[ops[-1]][0] <= oP or oA and oP < rules[ops[-1]][0])
       out.push( ops.pop )
     end
     ops.push(a)

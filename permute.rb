@@ -31,6 +31,9 @@ end
 #
 #  Another cool feature, as far as I can tell, the recursion only goes n-1 levels deep for an n-element list.
 #  More to come: m-dimensional permutations!
+#
+#  It should also be mentioned that this returns results sorted based on the order the set elements are in
+#  for example, permuting a sorted list of items will return all permutations in order
 
 def permute(set, x=0, result=[])
   if x == set.length - 2
