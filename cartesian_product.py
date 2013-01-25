@@ -3,7 +3,7 @@
 For problem answer:
 
     >> import cartesian_product
-    >> words = "the quick brown fox etc"
+    >> words = "the quick brown fox etc".split()
     >> cartesian_product.p(words)
     >> ---much gibberish---
 
